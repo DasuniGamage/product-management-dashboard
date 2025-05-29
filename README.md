@@ -32,8 +32,6 @@ This is a React-based E-Commerce Product Management Dashboard where users can ad
 src/
 ├── components/ # UI components (ProductCard, ProductGrid, etc.)
 ├── hooks/ # Custom hooks (useProducts, useLocalStorage)
-├── pages/ # High-level views (ProductDashboard)
-├── context/ # Reducer and initial state
 ├── assets/ # Images or static files (optional)
 ├── App.jsx # Main app shell
 └── main.jsx # Vite entry point
