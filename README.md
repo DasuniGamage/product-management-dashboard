@@ -1,12 +1,70 @@
-# React + Vite
+# 🛍️ E-Commerce Product Dashboard (React)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a React-based E-Commerce Product Management Dashboard where users can add, update, delete, search, and filter products. The application uses `useReducer` for state management and persists data in `localStorage`.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
 
-## Expanding the ESLint configuration
+- 🧩 Product listing in a responsive grid layout (MUI)
+- ➕ Add, ✏️ Edit, and ❌ Delete products with form validation
+- 🔍 Real-time search and advanced filtering (by category, stock, price)
+- 💾 Data persistence with `localStorage`
+- 📦 `useReducer` + custom hooks for clean state management
+- 📸 Image upload preview with fallback to default
+- ✅ Snackbar alerts for user feedback
+- 🧪 Ready for unit and integration testing
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🛠️ Tech Stack
+
+- React (Vite)
+- Material UI (MUI)
+- useReducer, useEffect, useState
+- Custom Hooks (`useProducts`, `useLocalStorage`)
+- LocalStorage for data persistence
+
+---
+
+## 📂 Project Structure
+
+src/
+├── components/ # UI components (ProductCard, ProductGrid, etc.)
+├── hooks/ # Custom hooks (useProducts, useLocalStorage)
+├── pages/ # High-level views (ProductDashboard)
+├── context/ # Reducer and initial state
+├── assets/ # Images or static files (optional)
+├── App.jsx # Main app shell
+└── main.jsx # Vite entry point
+
+## 📦 Installation & Setup
+
+### 1. Clone the repository
+
+git clone https://github.com/your-username/ecommerce-dashboard.git
+cd ecommerce-dashboard
+
+### 2. Install dependencies
+npm install
+
+### 3. Start the development server
+npm run dev
+
+## 📁 Public Folder Notes
+To set a default image fallback, add a file like '/public/default-image.png'
+
+Access it using /default-image.jpg in image URLs
+
+## 💡 Future Improvement
+***Add pagination or infinite scroll
+
+***Integrate a backend API (Node.js, Firebase, Supabase, etc.)
+
+***User authentication and admin roles
+
+***Upload images to cloud storage (Cloudinary, Firebase)
+
+## 🙋‍♀️ Author
+Made with patience by Dasuni Gamage
+> Connect with me on [LinkedIn](www.linkedin.com/in/dasuni-gamage)
