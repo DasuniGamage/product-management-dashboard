@@ -3,16 +3,16 @@ import Header from "./components/Header"
 import ProductDashboard from "./components/ProductDashboard"
 
 
-
-
 function App() {
+
+ 
 
   return (
     <>
       <CssBaseline />
       <Header />
-      <Container maxWidth="lg" >
-        <Box m={10}>
+      <Container maxWidth="lg"  >
+        <Box mt={10}>
           <ProductDashboard />
         </Box>
       </Container>

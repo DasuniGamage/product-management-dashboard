@@ -115,10 +115,7 @@ const ProductForm = ({ initialData = null, onSubmit, onCancel }) => {
 
   return (
     <Box component="form" onSubmit={handleSubmit} sx={{ mt: 2 }}>
-      <Typography variant="h6" mb={2}>
-        {initialData ? "Edit Product" : "Add New Product"}
-      </Typography>
-      <Grid container spacing={2}>
+      <Grid container spacing={2} direction="column">
         <Grid item xs={12} sm={6}>
           <TextField
             label="Product Name"
