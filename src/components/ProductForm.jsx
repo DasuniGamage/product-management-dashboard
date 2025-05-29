@@ -200,7 +200,7 @@ const ProductForm = ({ initialData = null, onSubmit, onDelete }) => {
         </Grid>
       </Grid>
 
-      <Box mt={3} display="flex" gap={2}>
+      <Box mt={3} display="flex" gap={2} justifyContent={"end"}>
         <Button type="submit" variant="contained" color="primary">
           {initialData ? "Update Product" : "Add Product"}
         </Button>

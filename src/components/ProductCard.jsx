@@ -44,9 +44,9 @@ const ProductCard = ({ product, onEdit }) => {
       <CardMedia
         component="img"
         height="180"
-        image={imageUrl || "/logo.jpg"}
+        image={imageUrl}
         alt={name}
-        onError={(e) => (e.target.src = "/logo.jpg")}
+        onError={(e) => (e.target.src = "/default-image.png")}
       />
       <CardContent sx={{ flexGrow: 1 }}>
         <Typography variant="h6" gutterBottom>
