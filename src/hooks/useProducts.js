@@ -14,9 +14,9 @@ const defaultProducts = [
     name: "Wireless Mouse",
     price: 25.99,
     category: "Electronics",
-    quantity: 12,
-    description: "A reliable wireless mouse with ergonomic design.",
-    imageUrl: "logo.jpg"
+    quantity: 15,
+    description: "Ergonomic wireless mouse with adjustable DPI and long battery life.",
+    imageUrl: "https://via.placeholder.com/300x200.png?text=Product+Image"
   },
   {
     id: "2",
@@ -24,26 +24,62 @@ const defaultProducts = [
     price: 45.00,
     category: "Electronics",
     quantity: 8,
-    description: "Portable speaker with rich sound.",
+    description: "Compact Bluetooth speaker with deep bass and 12-hour playtime.",
     imageUrl: "logo.jpg"
   },
   {
     id: "3",
-    name: "Wireless Tab",
-    price: 25.99,
-    category: "Electronics",
-    quantity: 12,
-    description: "A reliable wireless mouse with ergonomic design and long battery life.",
+    name: "Yoga Mat",
+    price: 22.99,
+    category: "Sports",
+    quantity: 25,
+    description: "Non-slip eco-friendly yoga mat with carrying strap.",
+    imageUrl: "yogamat.jpg"
+  },
+  {
+    id: "4",
+    name: "Stainless Steel Water Bottle",
+    price: 18.50,
+    category: "Home",
+    quantity: 20,
+    description: "Insulated bottle that keeps drinks cold for 24 hours or hot for 12.",
     imageUrl: "logo.jpg"
   },
-    {
-    id: "4",
-    name: "Wireless Keyboard",
-    price: 25.99,
-    category: "Electronics",
+  {
+    id: "5",
+    name: "Running Shoes",
+    price: 69.99,
+    category: "Clothing",
+    quantity: 10,
+    description: "Lightweight, breathable running shoes with cushioned sole.",
+    imageUrl: "shoes.jpg"
+  },
+  {
+    id: "6",
+    name: "LED Desk Lamp",
+    price: 34.75,
+    category: "Home",
     quantity: 12,
-    description: "A reliable wirelessaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-    imageUrl: "logo.jpg"
+    description: "Adjustable LED desk lamp with touch controls and USB charging port.",
+    imageUrl: "lamp.jpg"
+  },
+  {
+    id: "7",
+    name: "Noise-Cancelling Headphones",
+    price: 129.00,
+    category: "Electronics",
+    quantity: 5,
+    description: "Over-ear headphones with active noise cancellation and Bluetooth 5.0.",
+    imageUrl: "hp.jpg"
+  },
+  {
+    id: "8",
+    name: "Digital Watch",
+    price: 49.99,
+    category: "Clothing",
+    quantity: 9,
+    description: "Water-resistant digital watch with stopwatch, alarm, and backlight.",
+    imageUrl: "watch.jpg"
   }
 ];
 
