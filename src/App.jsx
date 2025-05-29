@@ -48,8 +48,8 @@ function App() {
     <>
       <CssBaseline />
       <Header />
-      <Container maxWidth="lg">
-        <Box mt={4}>
+      <Container maxWidth="lg" >
+        <Box m={10}>
           <ProductGrid products={sampleProducts} />
         </Box>
       </Container>

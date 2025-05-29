@@ -2,11 +2,19 @@ import { AppBar, Avatar, Box, IconButton, Toolbar, Typography } from "@mui/mater
 
 const Header = () => {
   return (
-    <AppBar position="static" color="transparent" elevation={4}>
+    <AppBar 
+    position="fixed" 
+    color="transparent" 
+    elevation={4} 
+     sx={{
+        backgroundColor: 'rgba(255, 255, 255, 0.4)',
+        backdropFilter: 'blur(10px)', 
+        borderBottom: '1px solid rgba(255, 255, 255, 0.2)',
+        zIndex: (theme) => theme.zIndex.drawer + 1,
+      }}>
         <Toolbar sx={{ display: 'flex',justifyContent: 'space-between', bgcolor:'primary'}}>
           {/* Logo */}
           <Typography variant="h6" component="div">
-            {/* <img src="/logo.jpg" alt="Company Logo" style={{ height: 70 }} /> */}
             Product Dashboard
           </Typography>
           <Box sx={{height:'full', mx:2}}>
