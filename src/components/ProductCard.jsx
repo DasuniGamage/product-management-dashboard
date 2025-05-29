@@ -1,3 +1,4 @@
+import { Edit } from "@mui/icons-material";
 import {
   Card,
   CardContent,
@@ -5,20 +6,41 @@ import {
   Typography,
   Box,
   Chip,
+  Button,
+  IconButton,
+  Fab,
+  Tooltip,
 } from "@mui/material";
 
-const ProductCard = ({ product }) => {
+const ProductCard = ({ product, onEdit }) => {
   const {
     name,
     price,
     category,
-    stock,
+    quantity,
     description,
     imageUrl,
   } = product;
 
   return (
-    <Card sx={{ maxWidth: 345, height: "100%", display: "flex", flexDirection: "column" }}>
+    <Card sx={{ width: 345, height: "100%", display: "flex", flexDirection: "column",overflow: "hidden",position:"relative" }}>
+      <Tooltip title="Edit Product">
+        <Fab
+          color="transparent"
+          aria-label="aeditdd"
+          size="small"
+          onClick={() => onEdit(product)}
+          sx={{
+            position: "absolute",
+            top: 2,
+            right: 2,
+            zIndex: 2,
+            boxShadow:"none"
+          }}
+        >
+          <Edit />
+        </Fab>
+      </Tooltip>
       <CardMedia
         component="img"
         height="180"
@@ -43,8 +65,8 @@ const ProductCard = ({ product }) => {
             ${price.toFixed(2)}
           </Typography>
           <Chip
-            label={stock > 0 ? (stock < 5 ? "Low Stock" : "In Stock") : "Out of Stock"}
-            color={stock === 0 ? "error" : stock < 5 ? "warning" : "success"}
+            label={quantity > 0 ? (quantity < 5 ? "Low Stock" : "In Stock") : "Out of Stock"}
+            color={quantity === 0 ? "error" : quantity < 5 ? "warning" : "success"}
             size="small"
           />
         </Box>
