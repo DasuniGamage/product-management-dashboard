@@ -2,51 +2,51 @@ import { useState } from "react";
 import ProductGrid from "./productGrid";
 import ProductFormDialog from "./ProductFormDialog";
 import { useProducts } from "../hooks/useProducts";
+import { Alert, Snackbar } from "@mui/material";
 
 
 const ProductDashboard = () => {
   // const [products, setProducts] = useState([])
   const [openForm, setOpenForm] = useState(false);
   const [editingProduct, setEditingProduct] = useState(null);
+  const [success, setSuccess] = useState(false); 
+  const [snackbarMessage, setSnackbarMessage] = useState("");
+  const [snackbarSeverity, setSnackbarSeverity] = useState("success");
 
-    const { products, addProduct, updateProduct } = useProducts();
+    const { products, addProduct, updateProduct ,deleteProduct} = useProducts();
 
-
-
-  // useEffect(() => {
-  //   const stored = localStorage.getItem("product_list");
-  //   if (stored) {
-  //     setProducts(JSON.parse(stored));
-  //   }
-  // }, []);
-
-   const handleAddOrUpdateProduct = (product) => {
+  const handleAddOrUpdateProduct = (product) => {
     if (product.id && products.some((p) => p.id === product.id)) {
       updateProduct(product);
+      setSnackbarMessage("Product updated successfully!");
+      setSnackbarSeverity("success");
     } else {
       addProduct(product);
+      setSnackbarMessage("Product added successfully!");
+      setSnackbarSeverity("success");
     }
+    setEditingProduct(null);
     setOpenForm(false);
+    setSuccess(true);
   };
-  
 
-  // const handleAddOrUpdateProduct = (product) => {
-  //   setProducts((prev) => {
-  //     const index = prev.findIndex((p) => p.id === product.id);
-  //     if (index !== -1) {
-  //       // Update
-  //       const updated = [...prev];
-  //       updated[index] = product;
-  //       return updated;
-  //     }
-  //     // Add
-  //     return [...prev, product];
-  //   });
-  // };
 
+  const handleDeleteProduct = (id) => {
+    deleteProduct(id);
+    setSnackbarMessage("Product deleted successfully!");
+    setSnackbarSeverity("warning"); // OR "info", "error", etc.
+    setEditingProduct(null);
+    setOpenForm(false);
+    setSuccess(true);
+  };
    const handleEditClick = (product) => {
     setEditingProduct(product);
     setOpenForm(true);
+  };
+
+  const handleCloseSnackbar = (event, reason) => {
+    if (reason === "clickaway") return; // Ignore clickaway
+    setSuccess(false);
   };
 
 
@@ -66,7 +66,23 @@ const ProductDashboard = () => {
         onClose={() => {setOpenForm(false)}}
         initialData={editingProduct}
         onSubmit={handleAddOrUpdateProduct}
+        onDelete={handleDeleteProduct}
       />
+
+      <Snackbar
+        open={success}
+        autoHideDuration={3000}
+        onClose={handleCloseSnackbar}
+        anchorOrigin={{ vertical: "top", horizontal: "right" }}
+      >
+        <Alert
+          onClose={handleCloseSnackbar}
+          severity={snackbarSeverity}
+          sx={{ width: "100%" }}
+        >
+          {snackbarMessage}
+        </Alert>
+      </Snackbar>
     </>
   );
 };

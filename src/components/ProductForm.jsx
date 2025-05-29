@@ -1,10 +1,9 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import {
   TextField,
   Button,
   Box,
   MenuItem,
-  Typography,
   Grid,
   Snackbar,
   Alert,
@@ -29,10 +28,9 @@ const initialFormState = {
   image: "",
 };
 
-const ProductForm = ({ initialData = null, onSubmit, onCancel }) => {
+const ProductForm = ({ initialData = null, onSubmit, onDelete }) => {
   const [formData, setFormData] = useState(initialFormState);
   const [errors, setErrors] = useState({});
-  const [success, setSuccess] = useState(false);
 
   useEffect(() => {
     if (initialData) {
@@ -99,7 +97,6 @@ const ProductForm = ({ initialData = null, onSubmit, onCancel }) => {
     };
 
     onSubmit(newProduct);
-    setSuccess(true);
 
     if (!initialData) {
       setFormData(initialFormState); // reset after add
@@ -110,8 +107,6 @@ const ProductForm = ({ initialData = null, onSubmit, onCancel }) => {
     setFormData(initialFormState);
     setErrors({});
   };
-
-  const handleCloseSnackbar = () => setSuccess(false);
 
   return (
     <Box component="form" onSubmit={handleSubmit} sx={{ mt: 2 }}>
@@ -213,22 +208,16 @@ const ProductForm = ({ initialData = null, onSubmit, onCancel }) => {
           Reset
         </Button>
         {initialData && (
-          <Button type="button" variant="text" color="secondary" onClick={onCancel}>
-            Cancel
-          </Button>
+          <Button
+              type="button"
+              variant="contained"
+              color="error"
+              onClick={() => onDelete(initialData.id)}
+            >
+              Delete
+            </Button>
         )}
       </Box>
-
-      <Snackbar
-        open={success}
-        autoHideDuration={3000}
-        onClose={handleCloseSnackbar}
-        anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
-      >
-        <Alert severity="success" onClose={handleCloseSnackbar}>
-          {initialData ? "Product updated!" : "Product added!"}
-        </Alert>
-      </Snackbar>
     </Box>
   );
 };

@@ -2,7 +2,7 @@ import { Dialog, DialogTitle, DialogContent, IconButton } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 import ProductForm from "./ProductForm";
 
-const ProductFormDialog = ({ open, onClose, onSubmit, initialData }) => {
+const ProductFormDialog = ({ open, onClose, onSubmit,onDelete, initialData }) => {
   return (
     <Dialog open={open} onClose={onClose} fullWidth maxWidth="md">
       <DialogTitle>
@@ -23,6 +23,7 @@ const ProductFormDialog = ({ open, onClose, onSubmit, initialData }) => {
             onClose(); 
           }}
           onCancel={onClose}
+          onDelete={onDelete} 
         />
       </DialogContent>
     </Dialog>
